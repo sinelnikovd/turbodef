@@ -1,0 +1,20 @@
+{
+  "name": "project-template",
+  "description": "My default project template.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Sinelnikov Dmitriy"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}

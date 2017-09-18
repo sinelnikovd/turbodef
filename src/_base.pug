@@ -1,0 +1,35 @@
+include _assets/bemto/bemto
+
+include head/head
+
+doctype html
+html(lang="ru")
+
+	block head
+		head
+			+head({
+				"title": "Project Template",
+				"author": "Sinelnikov Dmitriy",
+				"description": "My default project template."
+			})
+			
+		+b.BODY.page
+			+e.wrap
+				block header
+					+b.header header
+
+				block content
+					div content
+
+				block footer
+					footer footer
+				
+			block vendors
+				// build:js js/vendor.js
+				script( src="_assets/jquery/dist/jquery.min.js")
+				script( src="_assets/owl.carousel/dist/owl.carousel.min.js")
+				// endbuild
+			block scripts
+				// build:js js/main.js
+				script( src="js/main.js")
+				// endbuild

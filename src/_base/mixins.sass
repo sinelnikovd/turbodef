@@ -1,0 +1,87 @@
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "")
+  $index: str-index($string, $search)
+
+  @if $index
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+
+  @return $string
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+=font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)
+  $src: null
+  $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_"))
+
+  $formats: ( otf: "opentype", ttf: "truetype")
+
+  @each $ext in $exts
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma)
+
+  @font-face
+    font-family: quote($name)
+    font-style: $style
+    font-weight: $weight
+    src: $src
+
+
+// =============================================================================
+// MEDIA
+// =============================================================================
+
+// width
+=r($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+
+=rmin($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
+
+// height
+=rh($height)
+  @media only screen and (max-height: $height + "px")
+    @content
+
+=rhmin($height)
+  @media only screen and (min-height: $height + "px")
+    @content
+
+// =============================================================================
+// HOVER
+// =============================================================================
+
+=hover
+  .no-touch &:hover
+    @content
+
+// =============================================================================
+// BOX-SIZING
+// =============================================================================
+=box
+  box-sizing: border-box
+
+// =============================================================================
+// COVER
+// =============================================================================
+=cover
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 50% 50%
+
+// =============================================================================
+// CLEAR
+// =============================================================================
+=clr
+  &:after
+    content: " "
+    display: table
+    clear: both
+  *zoom: 1

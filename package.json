@@ -1,0 +1,40 @@
+{
+  "name": "project-template",
+  "version": "1.0.0",
+  "description": "My default project template.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinelnikovd/project-template.git"
+  },
+  "author": "Sinelnikov Dmitriy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sinelnikovd/project-template/issues"
+  },
+  "homepage": "https://github.com/sinelnikovd/project-template#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "rimraf": "^2.6.1",
+    "vinyl-ftp": "^0.6.0",
+    "gulp.spritesmith": "^6.5.1"
+  }
+}

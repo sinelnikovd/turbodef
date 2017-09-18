@@ -1,0 +1,45 @@
+body
+  +pfr
+  font-size: 16px
+  line-height: (22/16)
+  min-width: ($width+$gutter/2)
+  letter-spacing: -.64px
+
+img
+  max-width: 100%
+
+.container
+  +box
+  max-width: $width+$gutter/2
+  padding: 0 $gutter/2
+  margin: 0 auto
+
++sprites($icon-sprites)
+
+.icon
+  display: inline-block
+  vertical-align: middle
+
+.icon_next
+  &:hover
+    +sprite($icon-nexth)
+.icon_prev
+  &:hover
+    +sprite($icon-prevh)
+
+
+
+
+.like-h1
+  +pfbi
+  font-size: 27px
+  line-height: 1.18
+  letter-spacing: -.3px
+
+.like-h2
+  +pfbi
+  text-transform: uppercase
+  font-size: 22px
+  text-align: center
+  margin-bottom: 25px
+  letter-spacing: -.4px
