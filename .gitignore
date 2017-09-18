@@ -1,4 +1,7 @@
 /node_modules
-/dev
+/dev/css
+/dev/js
+/dev/_assets
+/dev/*.html
 /src/_assets
 /build
